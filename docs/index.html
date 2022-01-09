@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Telephone</title>
+    <link rel="stylesheet" type="text/css" href="css/styles.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+    <link rel="icon" href="images/favicon.svg">
+
+    <!-- Scripts -->
+    <script defer src="js/notification.js"></script>
+    <script defer src="js/word.js"></script>
+
+    <!-- Personalities -->
+    <script defer src="js/personalities/abstractPersonality.js"></script>
+    <script defer src="js/personalities/dog.js"></script>
+    <script defer src="js/personalities/hesitant.js"></script>
+    <script defer src="js/personalities/littleBrother.js"></script>
+    <script defer src="js/personalities/glados.js"></script>
+    <script defer src="js/personalities/gladosFilter.js"></script>
+    <script defer src="js/personalities/eskild.js"></script>
+    <script defer src="js/personalities/karuni.js"></script>
+
+    <!-- Modules -->
+    <script type="module" src="js/modules/speechRecognition.js"></script>
+    <script type="module" src="js/modules/textMessaging.js"></script>
+    <script type="module" src="js/modules/NodeManager.js"></script>
+
+    <!-- Libraries -->
+    <script defer src="js/libraries/rivescript.min.js"></script>
+</head>
+<body>
+<!-- NOTIFICATION -->
+<div id="notification">
+    <div id="notification-message">Test Message</div>
+</div>
+
+<div id="wrapper">
+    <!-- LISTENER -->
+    <div id="human-wrapper" class="module">
+        <h1>Listener</h1>
+        <div id="human-language">
+            <label for="lang-english">
+                <input type="radio" id="lang-english" name="language" value="en-US" checked>
+                <span class="radio"></span>English
+            </label>
+            <label for="lang-spanish">
+                <input type="radio" id="lang-spanish" name="language" value="es-ES">
+                <span class="radio"></span>Spanish
+            </label>
+            <label for="lang-german">
+                <input type="radio" id="lang-german" name="language" value="de-DE">
+                <span class="radio"></span>German
+            </label>
+            <label for="lang-chinese">
+                <input type="radio" id="lang-chinese" name="language" value="zh-CN">
+                <span class="radio"></span>Chinese
+            </label>
+            <label for="lang-japanese">
+                <input type="radio" id="lang-japanese" name="language" value="ja-JP">
+                <span class="radio"></span>Japanese
+            </label>
+        </div>
+        <div id="human-options">
+            <label for="continuous">
+                <input type="checkbox" id="continuous" name="continuous">
+                <span class="checkbox"></span>Continue listening
+            </label>
+        </div>
+        <button id="listen">Listen</button>
+    </div>
+
+    <!-- TEXTER -->
+    <div class="module">
+        <div id="messaging" class="text-field">
+            <input type="text" id="message" name="message" placeholder="When you just can't say the words...">
+            <button id="send">Send</button>
+        </div>
+    </div>
+
+    <!-- NODES -->
+    <div id="node-manager" class="module"></div>
+    <div id="node-container"></div>
+</div>
+<script> // fixes bug that causes css animation to play in beginning </script>
+</body>
+</html>
